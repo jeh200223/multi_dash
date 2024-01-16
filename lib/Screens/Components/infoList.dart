@@ -10,68 +10,16 @@ class infoList extends StatefulWidget {
 class _infoListState extends State<infoList> {
   @override
   Widget build(BuildContext context) {
-    final List<String> rooms = <String>[
-      "101",
-      "101",
-      "102",
-      "103",
-      "201",
-      "201",
-      "201",
-      "204"
-    ];
-    final List<String> company = <String>[
-      "글로벌",
-      "대한",
-      "한국",
-      "대우",
-      "글로벌",
-      "대한",
-      "글로벌",
-      "대우"
-    ];
-    final List<String> tap_num = <String>[
-      "1",
-      "2",
-      "1",
-      "1",
-      "1",
-      "2",
-      "3",
-      "1"
-    ];
+    final List<String> rooms = <String>["101", "101", "102", "103", "201", "201", "201", "204"];
+    final List<String> company = <String>["글로벌", "대한", "한국", "대우", "글로벌", "대한", "글로벌", "대우"];
+    final List<String> tap_num = <String>["1", "2", "1", "1", "1", "2", "3", "1"];
     final List<String> plug = <String>["2", "2", "3", "4", "2", "2", "2", "4"];
-    final List<String> wart = <String>[
-      "20",
-      "40",
-      "60",
-      "30",
-      "50",
-      "50",
-      "40",
-      "40"
-    ];
-    final List<String> temp = <String>[
-      "15.1",
-      "11.1",
-      "20.3",
-      "21.5",
-      "18.8",
-      "15.5",
-      "24.9",
-      "27.3"
-    ];
-    final List<String> emer = <String>[
-      "안정",
-      "안정",
-      "주의",
-      "주의",
-      "안정",
-      "안정",
-      "주의",
-      "위험"
-    ];
+    final List<String> wart = <String>["20", "40", "60", "30", "50", "50", "40", "40"];
+    final List<String> temp = <String>["15.1", "11.1", "20.3", "21.5", "18.8", "15.5", "24.9", "27.3"];
+    final List<String> emer = <String>["안정", "안정", "주의", "주의", "안정", "안정", "주의", "위험"];
+    // 방, 회사, 탭 번호 등의 정보를 담은 리스트들을 임의로 정의
     return Container(
+      // 정보를 표시할 Container를 생성
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(
@@ -81,6 +29,7 @@ class _infoListState extends State<infoList> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        // 표의 헤더 부분을 생성
         children: [
           Container(
             decoration: BoxDecoration(
@@ -89,6 +38,7 @@ class _infoListState extends State<infoList> {
               ),
             ),
             child: Row(
+              // 각 열의 제목을 표시하는 컨테이너들을 생성
               children: [
                 Expanded(
                   child: Container(
@@ -199,6 +149,7 @@ class _infoListState extends State<infoList> {
             ),
           ),
           Expanded(
+            // ListView를 사용하여 각 방의 정보를 동적으로 생성
             flex: 1,
             child: Container(
               child: ListView.builder(
@@ -211,9 +162,11 @@ class _infoListState extends State<infoList> {
                   ),
                   child: Column(
                     children: [
+                      // 각 방의 정보를 표시하는 Row를 생성
                       Row(
                         children: [
                           Expanded(
+                            // 방 번호, 회사, 탭 번호, 플러그, 전력, 온도, 상황을 표시하는 각 컨테이너를 생성
                             child: Container(
                               decoration: BoxDecoration(
                                 border: Border(

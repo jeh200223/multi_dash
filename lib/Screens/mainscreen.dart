@@ -15,17 +15,23 @@ class _MainscreenState extends State<Mainscreen> {
   @override
   Widget build(BuildContext context) {
     bool tablet = Responsive.isTablet(context);
+    // 현재 장치가 태블릿인지 확인
     return Scaffold(
       appBar: AppBar(
+        // 앱바 설정
         toolbarHeight: tablet ? 50 : 90,
+        // 태블릿 또는 모바일에 따라 앱바 높이 조절
         centerTitle: false,
         title: const Header(),
+        // Header 위젯을 앱바 타이틀로 사용
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
       ),
       body: Column(
+        // 본문 설정
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          // 첫 번째 행 (멀티탭 전력 상황 현황 타이틀)
           Expanded(
             flex: 1,
             child: Row(
@@ -62,6 +68,7 @@ class _MainscreenState extends State<Mainscreen> {
             ),
           ),
           Expanded(
+            // 두 번째 행 (infoList 위젯을 통해 전력 상황 리스트 표시)
             flex: 11,
             child: infoList(),
           ),
